@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bracket/style.css' %}">
+
+<h1>Make your own tournament</h1>
+
+<p>Choose wich format you prefer and add your teams. Then it will be randomly matched.</p>
+
+<form action="{% url 'bracket:make' %}" method="post">
+    <input type="radio" name="format" id="play-off" value="play-off">
+    <label for="play-off">The play-off system That makes normal league subbracket</label>
+    <input type="radio" name="format" id="everyone" value="everyone">
+    <label for="everyone">Mode when every team face all the others</label>
+</form> 
+<p> pawel </p>
