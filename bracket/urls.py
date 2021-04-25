@@ -6,4 +6,5 @@ from . import views
 app_name = 'bracket'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('make', views.make, name='make'),
 ]
