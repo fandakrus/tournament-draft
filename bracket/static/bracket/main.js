@@ -15,3 +15,14 @@ function AddTeam() {
     teamdiv.appendChild(document.createElement('br'));
     container.appendChild(teamdiv);
 }
+
+function ThisWin(winnerId) {
+    console.log(winnerId);
+    document.getElementById(winnerId).style.backgroundColor = '#33ff33';
+    winfield = winnerId.split("-");
+    if (winfield[0] === 'resultblue'){
+        document.getElementById('resultred-' + winfield[1]).style.backgroundColor = 'red';
+    } else {
+        document.getElementById('resultblue-' + winfield[1]).style.backgroundColor = 'red';
+    }
+}

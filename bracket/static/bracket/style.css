@@ -1,0 +1,12 @@
+.bracket-td {
+    border: black solid 1px;
+    margin: 0;
+}
+
+.blue-site {
+    background-color: rgb(108, 108, 206);
+}
+
+.red-site {
+    background-color: rgb(180, 62, 62);
+}

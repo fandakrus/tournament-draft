@@ -4,14 +4,14 @@
 
 <table>
     <tr>
-        <td>Blue Site</td>
-        <td>Red Site</td>
+        <td class="bracket-td blue-site">Blue Site</td>
+        <td class="bracket-td red-site">Red Site</td>
     </tr>
 
     {% for match in matches %}
     <tr>
-        <td>{{ match.0 }}</td>
-        <td>{{ match.1 }}</td>
+        <td class="bracket-td" onClick="ThisWin(this.id)" id="resultblue-{{ forloop.counter }}">{{ match.0 }}</td>
+        <td class="bracket-td" onClick="ThisWin(this.id)" id="resultred-{{ forloop.counter }}">{{ match.1 }}</td>
     </tr>
 
     {% endfor %}

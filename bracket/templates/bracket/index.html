@@ -9,7 +9,7 @@
         <form action="{% url 'bracket:make' %}" method="post">
             {% csrf_token %}
             <div>
-                <input type="radio" name="format" id="play-off" value="play-off">
+                <input type="radio" name="format" id="play-off" value="play-off" checked>
                 <label for="play-off">The play-off system That makes normal league subbracket</label>
                 <input type="radio" name="format" id="everyone" value="everyone">
                 <label for="everyone">Mode when every team face all the others</label>
