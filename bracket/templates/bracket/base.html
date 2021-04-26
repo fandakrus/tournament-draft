@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bracket/style.css' %}">
+</head>
+
+<body>
+    <nav>There will be navbar maybe one day xd</nav>
+    <main role="main" class="main-container">
+        {% block content %}
+        {% endblock  %}
+    </main>
+    <script src="{% static 'bracket/main.js' %}"></script>
+</body>
+
+</html>

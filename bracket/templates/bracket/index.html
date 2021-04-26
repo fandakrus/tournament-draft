@@ -1,10 +1,6 @@
-{% load static %}
+{% extends "bracket/base.html" %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'bracket/style.css' %}">
-<script src="{% static 'bracket/main.js' %}"></script>
-
-<body>
-
+{% block content %}
     <h1>Make your own tournament</h1>
 
     <p>Choose wich format you prefer and add your teams. Then it will be randomly matched.</p>
@@ -32,4 +28,4 @@
         </form>
     </div>
 
-</body>
+{% endblock %}
