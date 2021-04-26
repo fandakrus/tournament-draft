@@ -17,7 +17,6 @@ function AddTeam() {
 }
 
 function ThisWin(winnerId) {
-    console.log(winnerId);
     document.getElementById(winnerId).style.backgroundColor = '#33ff33';
     winfield = winnerId.split("-");
     if (winfield[0] === 'resultblue'){
