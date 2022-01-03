@@ -20,8 +20,11 @@ from django.contrib.auth import views as auth_views
 from accounts import views as accounts_views
 
 urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('', accounts_views.index, name='index'),
+    path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='logout'),
+    path('profile/', accounts_views.profile, name='profile'),
     path('register/', accounts_views.register, name='register'),
-    path('', include('bracket.urls')),
+    path('bracket/', include('bracket.urls')),
     path('admin/', admin.site.urls),
 ]

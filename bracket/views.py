@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from random import shuffle
 
@@ -28,10 +29,12 @@ def make_all_table(teams):
     return matches
     
 
-
+@login_required
 def index(request, *args, **kwargs):      # basic view for the first page with team picks
     return render(request, 'bracket/index.html')
 
+
+@login_required
 def make(request, *args, **kwargs):
     # prepare the table for tournament and pass it to view
     if request.method == 'POST':

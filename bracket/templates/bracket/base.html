@@ -4,15 +4,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'bracket/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-    <nav>There will be navbar maybe one day xd</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Logoxd</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  me-3" href="{% url 'bracket:index' %}">Bracket</a>
+            </li>
+        </ul>
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="{% url 'profile' %}"> {{ user.username }} </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">    
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+        </ul>
+        {% else %}
+        <ul class="navbar-nav">    
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+        </ul>
+        {% endif %}
+    </nav>
     <main role="main" class="main-container">
         {% if messages %}
-            {% for message in messages %}
-                <div class="{{ message.tags }}">{{ message }}</div>
-            {% endfor %}
+        {% for message in messages %}
+        <div class="{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
         {% endif %}
         {% block content %}
         {% endblock  %}

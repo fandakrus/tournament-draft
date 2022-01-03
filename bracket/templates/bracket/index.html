@@ -8,23 +8,26 @@
     <div>
         <form action="{% url 'bracket:make' %}" method="post">
             {% csrf_token %}
-            <div>
-                <input type="radio" name="format" id="play-off" value="play-off" checked>
-                <label for="play-off">The play-off system That makes normal league subbracket</label>
-                <input type="radio" name="format" id="everyone" value="everyone">
-                <label for="everyone">Mode when every team face all the others</label>
+            <div class="from-check">
+                <input class="form-check-input" type="radio" name="format" id="play-off" value="play-off" checked>
+                <label class="form-check-label" for="play-off">The play-off system That makes normal league subbracket</label>
+            </div>
+            <div class="from-check">
+                <input class="form-check-input" type="radio" name="format" id="everyone" value="everyone">
+                <label class="form-check-label" for="everyone">Mode when every team face all the others</label>
             </div>
 
-            <div id="container">
+            <div class="mt-3" id="container">
                 <div>
                     <label for="team1">Team 1</label>
                     <input type="text" name="team1">
                 </div>
             </div>
             <div>
-                <button id="addbutton" type="button" onclick="AddTeam()">Add team</button>
+                <button class="btn btn-outline-primary" id="addbutton" type="button" onclick="AddTeam()">Add team</button>
+                <input class="btn btn-outline-danger" type="submit" value="Done">
             </div>
-            <input type="submit" value="Done">
+            
         </form>
     </div>
 
